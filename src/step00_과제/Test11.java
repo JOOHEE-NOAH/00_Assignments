@@ -39,7 +39,7 @@ public class Test11 {
 		} else if (x=='*') {
 			System.out.print(a+" "+"*"+" "+b+" = "+(a*b));
 		}else if (x=='/') {
-			System.out.printf(a+" / "+b+" = %.5f",y);
+			System.out.print(a+" "+"/"+" "+b+" = "+y);
 			
 		} else {System.out.println("¿¬»êÀÚ error");}
 		
