@@ -23,18 +23,26 @@ import java.util.Random;
 public class Test14 {
 
 	public static void main(String[] args) {
-	
+	int [] random=new int[50];
 	int cnt=0;
-	
-	for(int num=1;num<=50;num++) { //뽑고자 하는 자료의 갯수정하기
+	int sum=0;
+	for(int i=0;i<50;i++) { //뽑고자 하는 자료의 갯수정하기
+		random[i]=(int)(Math.random()*101+0);
 		System.out.print((int)(Math.random()*101+0)+"\t");
-	
-		// 한줄에 n개씩 표시하기:n으로 나누어 나머지가 0 
+			sum+=random[i];
+		
+			
+			// 한줄에 n개씩 표시하기:n으로 나누어 나머지가 0 
 		cnt++;
 		if (cnt%6==0) {
 			System.out.println();
+		
 		}
+		
+		
 	}
+	System.out.println();
+	System.out.println("합="+sum);
 	}
 
 }
