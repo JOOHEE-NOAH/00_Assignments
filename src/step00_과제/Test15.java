@@ -1,5 +1,9 @@
 package step00_과제;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 /*[문제15] 2자리의 난수를 발생하여 발생된 숫자를 맞추는 게임 프로그램
 난수발생) 
           1. int a=(int)(Math.random()*100) : 0 - 99 사이의 난수
@@ -27,8 +31,37 @@ package step00_과제;
 */
 public class Test15 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 		
-	}
-
+		int num;
+		char ck;
+		
+		
+		
+	do {System.out.println("*** 난수가 발생하였습니다.맞추어 보세요.***");
+	 	int a=(int)(Math.random()*100);// 0 - 99 사이의 난수
+	 	System.out.println(a);
+		do {
+			System.out.print("숫자 입력 : ");
+		num=Integer.parseInt(br.readLine());
+		if (num>a) {
+			System.out.println("컴퓨터의 숫자가 더 작습니다.");
+		}else if(num<a) {
+				System.out.println("컴퓨터의 숫자가 더 큽니다.");
+		} else {
+			System.out.println("추카추카...xx번만에 맞추셨습니다.");
+			break;
+			
+		}
+		
+		} while(num<a||num>a); {
+					
+		}
+				System.out.print("다시 할까요?(y/Y) ");
+				ck=br.readLine().charAt(0);				
+		}while(ck=='y' || ck=='Y');
+			System.out.println("***** 수고하셨습니다 *****");
+			System.exit(0);
+}
 }
