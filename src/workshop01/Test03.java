@@ -4,13 +4,9 @@ package workshop01;
  * 다음과 같이 변수가 선언 되어 있을 때 실행 결과가 100의 자리만 남기고 
  * 나머지 자릿수는 0으로 바꾸는 프로그램을 완성 하시오.
 
-class Test03 {
-public static void main(String[] args) {
 int num = 456;
 int result = ;
 System.out.println(result);
-}
-}
 
 1. 구현 클래스
 클래스명 메소드 설명
