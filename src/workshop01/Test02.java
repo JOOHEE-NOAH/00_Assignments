@@ -32,7 +32,7 @@ public class Test02 {
 			char c4 = '2';
 			int inx = 2;
 			System.out.println(s1+s2 );
-			System.out.println( );
+			System.out.println( bnx==false);
 			System.out.println( c1+c2);
 			System.out.println(c4+1 );
 			System.out.println(c3+c4);
