@@ -36,28 +36,27 @@ public class Test15 {
 		
 		int num;
 		char ck;
+		int count=0;
 		
-		
-		
+	
 	do {System.out.println("*** 난수가 발생하였습니다.맞추어 보세요.***");
 	 	int a=(int)(Math.random()*100);// 0 - 99 사이의 난수
-	 	System.out.println(a);
+
+	 	
 		do {
 			System.out.print("숫자 입력 : ");
 		num=Integer.parseInt(br.readLine());
 		if (num>a) {
 			System.out.println("컴퓨터의 숫자가 더 작습니다.");
 		}else if(num<a) {
-				System.out.println("컴퓨터의 숫자가 더 큽니다.");
-		} else {
-			System.out.println("추카추카...xx번만에 맞추셨습니다.");
-			break;
-			
+				System.out.println("컴퓨터의 숫자가 더 큽니다."); 	
 		}
-		
-		} while(num<a||num>a); {
+		count++;
+		} while(num!=a); {
 					
-		}
+		}System.out.println("추카추카..."+count+"번만에 맞추셨습니다.");
+		
+	
 				System.out.print("다시 할까요?(y/Y) ");
 				ck=br.readLine().charAt(0);				
 		}while(ck=='y' || ck=='Y');
