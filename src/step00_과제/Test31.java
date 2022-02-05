@@ -23,9 +23,23 @@ package step00_과제;
 둘레길이 : 14.60
 */
 public class Test31 {
-
+	private double base=5.0;
+	private double height=3.5;
+	
+	public double getArea() {
+		return (base*height)/2;
+	}
+	public double getHypotenuse() {
+		return Math.sqrt(base*base+height*height);
+	}
+	public double getPerimeter() {
+		return base+height+getHypotenuse();
+	}
 	public static void main(String[] args) {
-
+		Test31 ob=new Test31();
+		System.out.println("삼각형의 넓이 : "+ob.getArea());
+		System.out.printf("빗변길이 : %.2f\n", ob.getHypotenuse());
+		System.out.printf("둘레길이 : %.2f\n", ob.getPerimeter());
 	}
 
 }
