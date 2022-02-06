@@ -1,5 +1,7 @@
 package step00_과제;
 
+import java.util.Arrays;
+
 /*[문제 34] 크기가 5인 정수형배열을 만들고 난수(1~50)를 저장하여 출력하시오
 
 [결과화면]
@@ -13,21 +15,18 @@ public class Test34 {
 
 	public static void main(String[] args) {
 		int [] num=new int[5];
-		int max=num[0];
-		int min=num[0];
-		
 		
 		for(int i=0;i<num.length;i++) {
 		num[i]=(int)(Math.random()*50+1);
 		System.out.println("num["+i+"]="+num[i]);
 		}
-		
-		for(int i=1;i<num.length;i++) {
-			if(num[i]>max) {
-				max=num[i])}
-			}
+		Arrays.sort(num);
+		for(int i: num) {
+		System.out.println("num["+i+"]="+num[i]);
 		}
+			}
+		
 		
 	}
 
-}
+
