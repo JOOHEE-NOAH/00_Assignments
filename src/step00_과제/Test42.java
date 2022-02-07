@@ -1,5 +1,7 @@
 package step00_과제;
 
+import java.util.Scanner;
+
 /*[문제 42] 다음 프로그램을 완성하시오  ==> 도전과제
 (1)클래스명 : Health
       +gender:char        (성별)
@@ -45,9 +47,17 @@ class Health{
 	
 	public Health() {
 	}
-	public void input() {}
+	public void input() {
+		Scanner sc=new Scanner(System.in);
+		System.out.print("성별(M/F)을 입력하시오: ");
+		gender=sc.nextLine().charAt(0);
+		System.out.print("신장(Cm)을 입력하시오: ");
+		tall=sc.nextDouble();
+		System.out.print("체중(Kg)을 입력하시오: ");
+		weight=sc.nextDouble();
+	}
 	public String output() {
-		return "";
+		return "**비만도 측정 결과**\n성별: "+gender+"\n신장: "+tall+"Cm\n체중: "+weight+"Kg";
 	}
 }
 
@@ -55,10 +65,39 @@ public class Test42 extends Health {
 	private double fat;
 	private String result;
 	
-	public Test42() {}
-	public void calculate() {}
+	public Test42() {
+		
+	}
+	public void calculate() {
+		super.input();
+		double st=0;
+		double fat=0;
+		switch(gender) {
+		case 'm':
+		case 'M': st=(tall-100)*0.9; 
+		case 'f':
+		case 'F':st=(tall-100)*0.85;
+		}
+	
+		fat=(double)weight/st*100;
+
+		if(fat<=90) {
+			result="저체중";
+		} else if(fat>90 &&fat<=110){
+			result="정상(표준체중)";
+		}else if(fat>110 &&fat<=120){
+			result="과체중";
+		}else if(fat>120 && fat<=130){
+			result="경도비만";
+		}else if(fat>130 &&fat<=150){
+			result="중도비만";
+		} else result="고도비만";
+		
+	   
+	}
 	public String output() {
-		return "";
+		this.calculate();
+		return super.output()+"\n결과: 당신은 비만도 "+fat+"이고  "+result+" 입니다.";
 	}
 
 	public static void main(String[] args) {
