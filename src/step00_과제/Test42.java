@@ -39,10 +39,31 @@ package step00_과제;
    신장: 175.3Cm
    체중: 95.45Kg
    결과: 당신은 비만도 140.84이고  중도비만 입니다.*/
-public class Test42 {
+class Health{
+	public char gender;
+	public double tall,weight;
+	
+	public Health() {
+	}
+	public void input() {}
+	public String output() {
+		return "";
+	}
+}
+
+public class Test42 extends Health {
+	private double fat;
+	private String result;
+	
+	public Test42() {}
+	public void calculate() {}
+	public String output() {
+		return "";
+	}
 
 	public static void main(String[] args) {
-
+		Test42 ob=new Test42();
+	    System.out.println(ob.output());
 	}
 
 }
