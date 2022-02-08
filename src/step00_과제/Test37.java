@@ -66,30 +66,28 @@ import java.util.Scanner;
 
 감사합니다^.^
   */
-class Shape{
+class Shape{ 
 	public double area;
 	public final double  PI=3.141592;
+	//거의 모든 메소드에서 scanner을 중복으로 사용중->따라서 스캐너를 전역에 선언해준다.
+	Scanner sc=new Scanner(System.in);
 	public Shape() {
 
 		
 	}
 	
 	public int menu() {
-		System.out.print("**** 도형선택 *****\n1. 원\n2. 삼각형\n3. 사다리꼴\n4. 종료\n선택 : ");
-	Scanner sc=new Scanner(System.in);
+		System.out.print("\n**** 도형선택 *****\n1. 원\n2. 삼각형\n3. 사다리꼴\n4. 종료\n선택 : ");
 	return sc.nextInt();
 	}
 	public void circle() {
-		Scanner sc=new Scanner(System.in);
-		
 		System.out.print("**** 원넓이 ****\n 반지름:");
 		double r=sc.nextDouble();
 		area=r*r*PI;
 		
 		output();
 	}         
-	public void triangle() {
-		Scanner sc=new Scanner(System.in);
+	public void triangle() {		
 		System.out.println("**** 삼각형의 넓이 ****");
 		System.out.print("밑변 : ");
 		double base=sc.nextDouble();
@@ -100,7 +98,6 @@ class Shape{
 		output();
 	}         
 	public void trapezoid() {
-		Scanner sc=new Scanner(System.in);
 		System.out.println("**** 사다리꼴의 넓이 ****");
 		System.out.print("아랫변 : ");
 		double base=sc.nextDouble();
@@ -114,6 +111,7 @@ class Shape{
 	}
 	public void output() {
 		System.out.printf("넓이 : %.2f\n",area);
+		
 	}        
 }
 
