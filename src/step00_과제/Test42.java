@@ -57,7 +57,7 @@ class Health{
 		weight=sc.nextDouble();
 	}
 	public String output() {
-		return "**비만도 측정 결과**\n성별: "+gender+"\n신장: "+tall+"Cm\n체중: "+weight+"Kg";
+		return "**비만도 측정 결과**\n성별: "+gender+"\n신장: "+tall+"Cm\n체중: "+String.format("%.2f", weight)+"Kg";
 	}
 }
 
@@ -71,7 +71,6 @@ public class Test42 extends Health {
 	public void calculate() {
 		super.input();
 		double st=0;
-		double fat=0;
 		switch(gender) {
 		case 'm':
 		case 'M': st=(tall-100)*0.9; 
@@ -97,7 +96,7 @@ public class Test42 extends Health {
 	}
 	public String output() {
 		this.calculate();
-		return super.output()+"\n결과: 당신은 비만도 "+fat+"이고  "+result+" 입니다.";
+		return super.output()+"\n결과: 당신은 비만도 "+String.format("%.2f",fat)+"이고  "+result+" 입니다.";
 	}
 
 	public static void main(String[] args) {
