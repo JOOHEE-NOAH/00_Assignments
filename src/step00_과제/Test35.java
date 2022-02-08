@@ -22,6 +22,7 @@ class Circle{
 		Scanner sc=new Scanner(System.in);
 		System.out.print("반지름을 입력하시오 : ");
 		r=sc.nextInt();
+		sc.close();
 	}
 	public double process() {
 		return r*r*PI;
